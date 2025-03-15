@@ -13,10 +13,16 @@ app.use(bodyParser.json());
 const authRoutes = require('./routes/auth');
 const offersRoutes = require('./routes/offers');
 const questsRoutes = require('./routes/quests'); // Yeni əlavə
+const coinRoutes = require('./routes/coin');
 
 app.use('/api/asan-login', authRoutes);
 app.use('/api/offers', offersRoutes);
 app.use('/api/quests', questsRoutes); // Yeni endpoint
+
+// Əvvəlki route-lara əlavə olaraq:
+
+app.use('/api/coin', coinRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server ${PORT} portunda işləyir.`);
